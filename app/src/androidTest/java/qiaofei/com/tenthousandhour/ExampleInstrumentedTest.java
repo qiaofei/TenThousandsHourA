@@ -18,6 +18,6 @@ import static org.junit.Assert.*;
     // Context of the app under test.
     Context appContext = InstrumentationRegistry.getTargetContext();
 
-    assertEquals("qiaofei.com.coderinfoa", appContext.getPackageName());
+    assertEquals("qiaofei.com.tenthousandhour", appContext.getPackageName());
   }
 }

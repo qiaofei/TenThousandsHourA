@@ -12,13 +12,13 @@ import qiaofei.com.tenthousandhour.injector.scopes.ContextLife;
  */
 
 @Module public class AppModule {
-  private MyApp trailerApp;
+  private MyApp myApp;
 
-  public AppModule(MyApp trailerApp) {
-    this.trailerApp = trailerApp;
+  public AppModule(MyApp myApp) {
+    this.myApp = myApp;
   }
 
   @Provides @Singleton @ContextLife("Application") public Context provideContext() {
-    return trailerApp.getApplicationContext();
+    return myApp.getApplicationContext();
   }
 }

@@ -6,7 +6,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="qiaofei.com.tenthousandhour.views.MainActivity"
+    tools:context="qiaofei.com.tenthousandhour.views.main.MainActivity"
     >
 
   <TextView
