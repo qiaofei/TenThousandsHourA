@@ -10,7 +10,6 @@ import android.view.Window;
 import butterknife.ButterKnife;
 import java.util.LinkedList;
 import qiaofei.com.tenthousandhour.injector.component.ActivityComponent;
-import qiaofei.com.tenthousandhour.injector.component.AppComponent;
 import qiaofei.com.tenthousandhour.injector.component.DaggerActivityComponent;
 import qiaofei.com.tenthousandhour.injector.moudle.ActivityModule;
 
@@ -37,7 +36,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     ButterKnife.bind(this);
 
     mActivityComponent = DaggerActivityComponent.builder()
-        .appComponent(MyApp.mAppComponent)
         .activityModule(new ActivityModule(this))
         .build();
     initInjector();

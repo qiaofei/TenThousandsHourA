@@ -12,15 +12,9 @@ import qiaofei.com.tenthousandhour.views.main.MainActivity;
 /**
  * Created by QiaoFei on 2016/6/8.
  */
-@PerActivity @Component(dependencies = AppComponent.class, modules = ActivityModule.class)
-public interface ActivityComponent {
-  //void inject(LoginActivity loginActivity);
-
-  NetworkApi getNetworkApi();
+@Component(modules = ActivityModule.class) public interface ActivityComponent {
 
   @ContextLife("Activity") Context getActivityContext();
-
-  @ContextLife("Application") Context getApplicationContext();
 
   Activity getActivity();
 

@@ -5,8 +5,6 @@ import java.io.IOException;
 import qiaofei.com.tenthousandhour.injector.component.AppComponent;
 import qiaofei.com.tenthousandhour.injector.component.DaggerAppComponent;
 import qiaofei.com.tenthousandhour.injector.moudle.AppModule;
-import qiaofei.com.tenthousandhour.injector.moudle.NetworkModule;
-import qiaofei.com.tenthousandhour.utils.cacheutils.ACache;
 import qiaofei.com.tenthousandhour.utils.cacheutils.DiskLruCacheHelper;
 
 /**
@@ -14,13 +12,11 @@ import qiaofei.com.tenthousandhour.utils.cacheutils.DiskLruCacheHelper;
  */
 //DaemonApplication
 public class MyApp extends Application {
-  public static ACache mCache;
   public static DiskLruCacheHelper diskLruCacheHelper;
   public static AppComponent mAppComponent;
 
   @Override public void onCreate() {
     super.onCreate();
-    mCache = ACache.get(this);
     initializeInjector();
     try {
       diskLruCacheHelper = new DiskLruCacheHelper(getApplicationContext());
@@ -30,8 +26,7 @@ public class MyApp extends Application {
   }
 
   private void initializeInjector() {
-    mAppComponent =
-        DaggerAppComponent.builder().appModule(new AppModule(this)).networkModule(new NetworkModule()).build();
+    mAppComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
   }
 }
 

@@ -10,13 +10,10 @@ import qiaofei.com.tenthousandhour.injector.scopes.PerFragment;
 /**
  * Created by yuyidong on 15/11/22.
  */
-@PerFragment @Component(modules = FragmentModule.class, dependencies = AppComponent.class)
-public interface FragmentComponent {
-  @ContextLife("Application") Context getContext();
+@PerFragment @Component(modules = FragmentModule.class) public interface FragmentComponent {
 
   @ContextLife("Activity") Context getActivityContext();
 
   Activity getActivity();
 
-  //void inject(IndexFragment indexFragment);
 }

@@ -26,7 +26,6 @@ public abstract class BaseFragment extends Fragment {
       ButterKnife.bind(this, view);
     }
     fragmentComponent = DaggerFragmentComponent.builder()
-        .appComponent(MyApp.mAppComponent)
         .fragmentModule(new FragmentModule(this))
         .build();
     initInjector();

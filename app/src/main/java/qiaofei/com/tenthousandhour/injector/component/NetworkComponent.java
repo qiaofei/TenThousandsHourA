@@ -5,22 +5,16 @@ import dagger.Component;
 import javax.inject.Singleton;
 import qiaofei.com.tenthousandhour.injector.moudle.AppModule;
 import qiaofei.com.tenthousandhour.injector.moudle.NetworkModule;
-import qiaofei.com.tenthousandhour.utils.cacheutils.ACache;
-import qiaofei.com.tenthousandhour.utils.cacheutils.DiskLruCacheHelper;
-import qiaofei.com.tenthousandhour.utils.network.NetworkApi;
 import qiaofei.com.tenthousandhour.injector.scopes.ContextLife;
+import qiaofei.com.tenthousandhour.utils.network.NetworkApi;
 import qiaofei.com.tenthousandhour.views.main.MainPresenter;
 
 /**
  * Created by QiaoFei on 2016/6/7.
  */
-@Singleton @Component(modules = AppModule.class) public interface AppComponent {
+@Singleton @Component(modules = NetworkModule.class) public interface NetworkComponent {
 
-  @ContextLife("Application") Context getContext();
-
-  //ACache getAcache();
-
-  //DiskLruCacheHelper getDiskLruCacheHelper();
+  NetworkApi getNetworkApi();
 
   void inject(MainPresenter mainPresenter);
 }

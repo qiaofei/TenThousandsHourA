@@ -16,7 +16,6 @@ public class MainPresenter implements MainContract.MvpPresenter {
 
     private Context mContext;
     private MainContract.MvpView mView;
-    @Inject NetworkApi networkApi;
 
     @Inject
     public MainPresenter(@ContextLife("Activity") Context context) {

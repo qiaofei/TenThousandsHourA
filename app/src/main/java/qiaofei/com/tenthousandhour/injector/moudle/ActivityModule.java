@@ -18,11 +18,11 @@ import qiaofei.com.tenthousandhour.injector.scopes.PerActivity;
     this.mActivity = activity;
   }
 
-  @Provides @PerActivity @ContextLife("Activity") public Context provideContext() {
-    return mActivity;
+  @Provides @ContextLife("Activity") public Context provideContext() {
+    return mActivity.getApplicationContext();
   }
 
-  @Provides @PerActivity public Activity provideActivity() {
+  @Provides public Activity provideActivity() {
     return mActivity;
   }
 }
