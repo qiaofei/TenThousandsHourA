@@ -7,6 +7,7 @@ import qiaofei.com.tenthousandhour.base.BasePresenter;
 import qiaofei.com.tenthousandhour.base.IView;
 import qiaofei.com.tenthousandhour.base.MyApp;
 import qiaofei.com.tenthousandhour.injector.scopes.ContextLife;
+import qiaofei.com.tenthousandhour.utils.cacheutils.MyCacheUtil;
 
 /**
  * Created by QiaoFei on 2016/6/6.
@@ -16,6 +17,7 @@ public class MainPresenter extends BasePresenter implements MainContract.MvpPres
 
   private Context mContext;
   private MainContract.MvpView mView;
+  @Inject MyCacheUtil cacheUtil;
 
   @Inject public MainPresenter(@ContextLife("Activity") Context context) {
     mContext = context;

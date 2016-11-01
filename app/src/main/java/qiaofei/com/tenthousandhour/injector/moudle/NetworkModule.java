@@ -21,17 +21,13 @@ import static okhttp3.logging.HttpLoggingInterceptor.Level.NONE;
  * Created by QiaoFei on 2016/6/7.
  */
 @Module public class NetworkModule {
+
   @Provides @NonNull @Singleton public OkHttpClient provideOkHttpClient() {
-
     OkHttpClient okHttpClient = new OkHttpClient();
-
     HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
     httpLoggingInterceptor.setLevel(BuildConfig.DEBUG ? BODY : NONE);
-
-    OkHttpClient newClient = okHttpClient.newBuilder()
-        .connectTimeout(10, TimeUnit.SECONDS)
-        .addInterceptor(httpLoggingInterceptor)
-        .build();
+    OkHttpClient newClient =
+        okHttpClient.newBuilder().connectTimeout(10, TimeUnit.SECONDS).addInterceptor(httpLoggingInterceptor).build();
     return newClient;
   }
 

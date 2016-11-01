@@ -4,7 +4,7 @@ import android.content.Context;
 import dagger.Component;
 import javax.inject.Singleton;
 import qiaofei.com.tenthousandhour.injector.moudle.AppModule;
-import qiaofei.com.tenthousandhour.injector.scopes.ContextLife;
+import qiaofei.com.tenthousandhour.utils.cacheutils.MyCacheUtil;
 import qiaofei.com.tenthousandhour.views.main.MainPresenter;
 
 /**
@@ -12,11 +12,9 @@ import qiaofei.com.tenthousandhour.views.main.MainPresenter;
  */
 @Singleton @Component(modules = AppModule.class) public interface AppComponent {
 
-  @ContextLife("Application") Context getContext();
+  Context getContext();
 
-  //ACache getAcache();
-
-  //DiskLruCacheHelper getDiskLruCacheHelper();
+  MyCacheUtil getMyCacheUtil();
 
   void inject(MainPresenter mainPresenter);
 }
