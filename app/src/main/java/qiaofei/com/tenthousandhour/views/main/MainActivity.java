@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity implements MainContract.MvpView {
   public void initData() {
   }
 
-  protected int getLayoutId() {
+  @Override protected int setLayout() {
     return R.layout.activity_main;
   }
 }

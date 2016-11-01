@@ -5,7 +5,6 @@ import android.content.Context;
 import dagger.Module;
 import dagger.Provides;
 import qiaofei.com.tenthousandhour.injector.scopes.ContextLife;
-import qiaofei.com.tenthousandhour.injector.scopes.PerActivity;
 
 /**
  * Created by QiaoFei on 2016/6/8.

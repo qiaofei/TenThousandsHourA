@@ -29,15 +29,12 @@ public abstract class BaseActivity extends AppCompatActivity {
       finish();
       return;
     }
-    if (getLayoutId() != 0) {
-      setContentView(getLayoutId());
+    if (setLayout() != 0) {
+      setContentView(setLayout());
     }
     sAllActivitys.add(this);
     ButterKnife.bind(this);
-
-    mActivityComponent = DaggerActivityComponent.builder()
-        .activityModule(new ActivityModule(this))
-        .build();
+    mActivityComponent = DaggerActivityComponent.builder().activityModule(new ActivityModule(this)).build();
     initInjector();
     initData();
   }
@@ -50,9 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
   public void initData() {
   }
 
-  protected int getLayoutId() {
-    return 0;
-  }
+  protected abstract int setLayout();
 
   protected void onDestroy() {
     ButterKnife.unbind(this);

@@ -4,10 +4,6 @@ import android.content.Context;
 import dagger.Component;
 import javax.inject.Singleton;
 import qiaofei.com.tenthousandhour.injector.moudle.AppModule;
-import qiaofei.com.tenthousandhour.injector.moudle.NetworkModule;
-import qiaofei.com.tenthousandhour.utils.cacheutils.ACache;
-import qiaofei.com.tenthousandhour.utils.cacheutils.DiskLruCacheHelper;
-import qiaofei.com.tenthousandhour.utils.network.NetworkApi;
 import qiaofei.com.tenthousandhour.injector.scopes.ContextLife;
 import qiaofei.com.tenthousandhour.views.main.MainPresenter;
 

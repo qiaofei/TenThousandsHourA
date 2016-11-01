@@ -1,5 +1,6 @@
 package qiaofei.com.tenthousandhour.views.main;
 
+import qiaofei.com.tenthousandhour.base.IModels;
 import qiaofei.com.tenthousandhour.base.IPresenter;
 import qiaofei.com.tenthousandhour.base.IView;
 
@@ -8,9 +9,12 @@ import qiaofei.com.tenthousandhour.base.IView;
  */
 
 public interface MainContract {
-    interface MvpView extends IView {
-    }
+  interface MvpView extends IView {
+  }
 
-    interface MvpPresenter extends IPresenter {
-    }
+  interface MvpPresenter extends IPresenter {
+  }
+
+  interface MvpModels extends IModels {
+  }
 }

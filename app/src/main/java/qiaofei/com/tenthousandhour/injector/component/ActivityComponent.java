@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import dagger.Component;
 import qiaofei.com.tenthousandhour.injector.moudle.ActivityModule;
-import qiaofei.com.tenthousandhour.utils.network.NetworkApi;
 import qiaofei.com.tenthousandhour.injector.scopes.ContextLife;
-import qiaofei.com.tenthousandhour.injector.scopes.PerActivity;
 import qiaofei.com.tenthousandhour.views.main.MainActivity;
 
 /**
